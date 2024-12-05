@@ -256,4 +256,63 @@ photo-profile-1 Guillaume Salva
 bob@dylan:~$ 
 ```
 
+  * [3-all.js](./3-all.js): multiple promises to handle signup system.
 
+**4. Simple promise**
+
+Using the following prototype
+
+```
+function signUpUser(firstName, lastName) {
+}
+```
+That returns a resolved promise with this object:
+
+```
+{
+  firstName: value,
+  lastName: value,
+}
+```
+```
+bob@dylan:~$ cat 4-main.js
+import signUpUser from "./4-user-promise";
+
+console.log(signUpUser("Bob", "Dylan"));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 4-main.js 
+Promise { { firstName: 'Bob', lastName: 'Dylan' } }
+bob@dylan:~$ 
+```
+
+  * [4-user-promise.js](./4-user-promise.js): Simple user signup promise.
+
+**5. Reject the promises**
+
+Write and export a function named `uploadPhoto`. It should accept one argument `fileName` (string).
+
+The function should return a Promise rejecting with an Error and the string `$fileName cannot be processed`
+
+```
+export default function uploadPhoto(filename) {
+
+}
+```
+
+```
+bob@dylan:~$ cat 5-main.js
+import uploadPhoto from './5-photo-reject';
+
+console.log(uploadPhoto('guillaume.jpg'));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 5-main.js 
+Promise {
+  <rejected> Error: guillaume.jpg cannot be processed
+  ..
+    ..
+bob@dylan:~$ 
+```
+
+  * [5-photo-reject.js](./5-photo-reject.js): A function that returns a promise rejecting with and error and the string.
