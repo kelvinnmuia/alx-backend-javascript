@@ -504,4 +504,9 @@ bob@dylan:~$ npm run dev 100-main.js
 bob@dylan:~$ 
 ```
 
-  * [100-await.js](./100-await.js): JavaScript uploadPhoto and createUser functions.
+  * [100-await.js](./100-await.js): JavaScript uploadPhoto and createUser functions. 
+
+## Additional Project Resources
+
+  * [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
