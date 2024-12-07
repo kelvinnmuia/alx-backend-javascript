@@ -346,3 +346,162 @@ bob@dylan:~$
 ```
 
   * [6-final-user.js](./6-final-user.js): handleProfileSignup function.
+
+**7. Load balancer**
+
+Write and export a function named `loadBalancer`. It should accept two arguments `chinaDownload` (Promise) and `USDownload` (Promise).
+
+The function should return the value returned by the promise that resolved the first.
+
+```
+export default function loadBalancer(chinaDownload, USDownload) {
+
+}
+```
+
+```
+bob@dylan:~$ cat 7-main.js
+import loadBalancer from "./7-load_balancer";
+
+const ukSuccess = 'Downloading from UK is faster';
+const frSuccess = 'Downloading from FR is faster';
+
+const promiseUK = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 100, ukSuccess);
+});
+
+const promiseUKSlow = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 400, ukSuccess);
+});
+
+const promiseFR = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 200, frSuccess);
+});
+
+const test = async () => {
+    console.log(await loadBalancer(promiseUK, promiseFR));
+    console.log(await loadBalancer(promiseUKSlow, promiseFR));
+}
+
+test();
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 7-main.js 
+Downloading from UK is faster
+Downloading from FR is faster
+bob@dylan:~$ 
+```
+
+  * [7-load_balancer.js](./7-load_balancer.js): JavaScript `loadBalancer` function.
+
+**8. Throw error / try catch**
+
+Write a function named `divideFunction` that will accept two arguments: `numerator` (Number) and `denominator` (Number).
+
+When the `denominator` argument is equal to 0, the function should throw a new error with the message `cannot divide by 0`. Otherwise it should return the numerator divided by the denominator.
+
+```
+export default function divideFunction(numerator, denominator) {
+
+}
+```
+
+```
+bob@dylan:~$ cat 8-main.js
+import divideFunction from './8-try';
+
+console.log(divideFunction(10, 2));
+console.log(divideFunction(10, 0));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 8-main.js 
+5
+..../8-try.js:15
+  throw Error('cannot divide by 0');
+  ^
+.....
+
+bob@dylan:~$ 
+```
+
+  * [8-try.js](./8-try.js): JavaScript division function.
+
+**9. Throw an error**
+
+Write a function named `guardrail` that will accept one argument `mathFunction` (Function).
+
+This function should create and return an array named `queue`.
+
+When the `mathFunction` function is executed, the value returned by the function should be appended 
+to the queue. If this function throws an error, the error message should be appended to the queue. In every case, 
+the message `Guardrail was processed` should be added to the queue.
+
+Example:
+
+```
+[
+  1000,
+  'Guardrail was processed',
+]
+```
+
+```
+bob@dylan:~$ cat 9-main.js
+import guardrail from './9-try';
+import divideFunction from './8-try';
+
+console.log(guardrail(() => { return divideFunction(10, 2)}));
+console.log(guardrail(() => { return divideFunction(10, 0)}));
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 9-main.js 
+[ 5, 'Guardrail was processed' ]
+[ 'Error: cannot divide by 0', 'Guardrail was processed' ]
+bob@dylan:~$ 
+```
+
+  * [9-try.js](./9-try.js): JavaScript guardrail function
+
+**10. Await / Async
+
+Import `uploadPhoto` and `createUser` from `utils.js`
+
+Write an async function named `asyncUploadUser` that will call these two functions and return an object with the following format:
+
+```
+{
+  photo: response_from_uploadPhoto_function,
+  user: response_from_createUser_function,
+}
+```
+
+If one of the async function fails, return an empty object. Example:
+
+```
+{
+  photo: null,
+  user: null,
+}
+```
+
+```
+bob@dylan:~$ cat 100-main.js
+import asyncUploadUser from "./100-await";
+
+const test = async () => {
+    const value = await asyncUploadUser();
+    console.log(value);
+};
+
+test();
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 100-main.js 
+{
+  photo: { status: 200, body: 'photo-profile-1' },
+  user: { firstName: 'Guillaume', lastName: 'Salva' }
+}
+bob@dylan:~$ 
+```
+
+  * [100-await.js](./100-await.js): JavaScript uploadPhoto and createUser functions.
