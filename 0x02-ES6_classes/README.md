@@ -1,4 +1,4 @@
-# 0x01. ES6 Promises
+# 0x02. ES6 classes
 ## The Domains/Concepts covered in this project: `OOP` `JavaScript` `ES6`
 
  The project introduced me to ES6 Classes.
