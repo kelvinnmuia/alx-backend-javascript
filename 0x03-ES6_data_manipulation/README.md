@@ -1,7 +1,7 @@
-# 0x02. ES6 classes
+# 0x03. ES6 data manipulation
 ## The Domains/Concepts covered in this project: `JavaScript` `ES6`
 
- The project introduced me to data manipulation in ES6.
+The project introduced me to data manipulation in ES6.
 
 ## Setup
 **Install NodeJS 12.11.x**
