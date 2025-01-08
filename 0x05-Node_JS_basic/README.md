@@ -1,5 +1,5 @@
-# 0x04. Typescript
-## The Domains/Concepts covered in this project: `JavaScript` `TypeScript`
+# 0x05. NodeJS Basics 
+## The Domains/Concepts covered in this project: `Back-end` `JavaScript` `ES6` `NodeJS` `ExpressJS`
 
 The project introduced me to the basic concepts of NodeJs
 
@@ -496,9 +496,11 @@ If you want to add test to validate your integration, you will need to add this 
 
 Click to show/hide file contents
 
-  * [full_server/utils.js, full_server/controllers/AppController.js](./full_server/utils.js, full_server/controllers/AppController.js)
+  * [full_server/utils.js](./full_server/utils.js)
+  * [full_server/controllers/AppController.js](./full_server/controllers/AppController.js)
   * [full_server/controllers/StudentsController.js](./full_server/controllers/StudentsController.js)
-  * [full_server/routes/index.js, full_server/server.js](./full_server/routes/index.js, full_server/server.js)
+  * [full_server/routes/index.js](./full_server/routes/index.js)
+  * [full_server/server.js](./full_server/server.js)
 
 ## Additional Project Resources
 
