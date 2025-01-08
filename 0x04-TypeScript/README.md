@@ -1,4 +1,4 @@
-# 0x03. ES6 data manipulation
+# 0x04. Typescript
 ## The Domains/Concepts covered in this project: `JavaScript` `TypeScript`
 
 The project introduced me to Typescript
