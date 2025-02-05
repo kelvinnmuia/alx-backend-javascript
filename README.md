@@ -12,11 +12,11 @@ This repository is a comprehensive collection of my backend JavaScript projects 
   * **Node.js Backend Development** – Understanding server-side JavaScript, working with modules, and handling asynchronous operations.
   * **Unit Testing in JavaScript** – Writing effective unit tests using Jest to ensure code reliability.
 
-Projects :page_with_curl:
+## Projects :page_with_curl:
 
 The projects in this repository are structured to progressively enhance my expertise in backend JavaScript:
 
-**Back-end - Modern JavaScript**
+## Back-end - Modern JavaScript
 
   * [0x00. ES6 Basics](./0x00-ES6_basic)
   * [0x01. ES6 Promises](./0x01-ES6_promise)
